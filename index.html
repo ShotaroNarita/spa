@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="tabs">
+                <ul id="app_tabs">
+                    <li v-bind:class="{ 'is-active': isActive == 'version' }" id="version_tab"><a
+                            v-on:click="isActive = 'version'">Version</a></li>
+                    <li v-bind:class="{ 'is-active': isActive == 'register' }" id="register_tab"><a
+                            v-on:click="isActive = 'register'">Register</a></li>
+                    <li v-bind:class="{ 'is-active': isActive == 'tag' }" id="tag_tab"><a
+                            v-on:click="isActive = 'tag'">Tag</a></li>
+                    <li v-bind:class="{ 'is-active': isActive == 'help' }" id="help_tab"><a
+                            v-on:click="isActive = 'help'">Help</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="tab-contents">
+            <div class="content" v-if="isActive == 'version'">
+                <div class="section box">
+                    <table class="table is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>version id</th>
+                                <th>version tags</th>
+                                <th>commiter</th>
+                                <th>comment</th>
+                                <th>files</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                            </tr>
+
+                            <tr>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                            </tr>
+
+                            <tr>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                                <td>a</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="content" v-if="isActive == 'register'">
+                <div class="section box">
+                    <h6 class="subtitle">files in stage currently</h6>
+                    <div class="content">
+                        <ul>
+                            <li>aaa</li>
+                            <li>aaa</li>
+                            <li>aaa</li>
+                            <li>aaa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section box">
+                    <h6 class="subtitle">Commit info</h6>
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <div class="control">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Comment</label>
+                        <div class="control">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Tag1
+                            </label>
+                        </div>
+
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Tag1
+                            </label>
+                        </div>
+
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"> Tag1
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="content" v-if="isActive == 'tag'">
+                <div class="section">
+                    <h6>Here is list of tags</h6>
+                    <div>
+                        <p>aaaaa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" v-if="isActive == 'help'">
+                <div class="section">
+                    <h6>Here is help page</h6>
+
+                    <div>
+                        <p>aaaaa</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
+
+        <script src="./node_modules/vue/dist/vue.min.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    isActive: 'version'
+                },
+                mounted: function () {
+                    console.log('hello');
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>
